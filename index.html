@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRIVUD ALUMINIUM AND CONSTRUCTION WORKS (U) LTD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #000000;
+            --secondary: #FFD700;
+            --accent: #FFFFFF;
+            --text: #333333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #e6c200;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--accent);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-placeholder {
+            width: 180px;
+            height: 60px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-placeholder img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--accent);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .motto {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .hero .btn {
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .vision-mission {
+            margin-top: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .vision-mission h3 {
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .vision-mission h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        /* Clients Section */
+        .clients {
+            background-color: var(--light-gray);
+        }
+        
+        .clients-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .client-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .client-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .client-image {
+            height: 150px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .client-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--accent);
+        }
+        
+        .service-section {
+            margin-bottom: 60px;
+        }
+        
+        .service-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .service-title h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .service-title h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .service-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .service-image-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-image-item:hover .service-image-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-image-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light-gray);
+        }
+        
+        .service-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .service-action-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .service-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Team Section */
+        .team {
+            background-color: var(--light-gray);
+        }
+        
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .team-member {
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .team-member-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--accent);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--accent);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+        }
+        
+        .footer-links h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .about-image {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .motto {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: all 0.5s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .btn {
+                width: 100%;
+            }
+            
+            .service-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .clients-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-placeholder">
+                <!-- Replace with your logo -->
+                <img src="logo.jpg" alt="BRIVUD Logo"> 
+                <span style="color: var(--secondary); font-weight: bold; font-size: 1.5rem;">BRIVUD</span>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>BRIVUD ALUMINIUM AND CONSTRUCTION WORKS</h1>
+                <p class="motto">Create. Reliable. Innovative</p>
+                <p>Your trusted partner for high-quality aluminum and construction solutions in Uganda. We deliver excellence in every project.</p>
+                <a href="#contact" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Brivud Aluminium and Construction Works (U) LTD is a company which deals in everything that comes under Aluminium, Steel and Construction umbrella. We work with total commitment to help turn your dreams and ideas into solid images whether it's about beautifying your home with artistically-designed glass patterns or manufacturing aluminium windows and doors for commercial complex you are constructing.</p>
+                    <p>Located in Naalya-Maikas House next to Mogas Fuel Station, we have built a reputation for excellence, reliability, and innovation in the construction industry.</p>
+                    <p>Our team of skilled professionals is dedicated to transforming your vision into reality, whether it's for residential, commercial, or industrial projects.</p>
+                    
+                    <div class="vision-mission">
+                        <h3>Vision</h3>
+                        <p>Refining construction with aluminum, steel, and glass decoration to create stunning structures.</p>
+                        
+                        <h3>Mission</h3>
+                        <p>To undertake all kinds of aluminum, steel, and construction projects with a commitment to delivering the best quality, ensuring utmost security, and incorporating beautiful designs. We achieve this by leveraging the latest technological advancements and state-of-the-art equipment.</p>
+                        
+                        <h3>Objective</h3>
+                        <p>To explore and apply advanced technologies in aluminum, steel, and construction works, driving modernization and monetization in the millennium era.</p>
+                    </div>
+                    
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="Construction Site">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+                 
+            <!-- Service 1 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Aluminum Doors and Windows</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="aluminium/1.jpg" alt="Aluminum doors and windows">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="aluminium/2.jpg" alt="Aluminum doors and windows">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="aluminium/3.jpg" alt="Aluminum doors and windows">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="aluminium/4.jpg" alt="Aluminum doors and windows">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                   
+                </div>
+            </div>
+                 
+            <!-- Service 2 General steel welding -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>General Steel Welding</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="welding/1.jpg" alt="welding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="welding/2.jpg" alt="welding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="welding/3.jpg" alt="welding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="welding/4.jpg" alt="welding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                 
+                </div>
+            </div>
+                 
+            <!-- Service 3 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>General Constructions </h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="construction/1.jpg" alt="constructions">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                               <img src="construction/2.jpg" alt="constructions">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="construction/3.jpg" alt="constructions">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                               <img src="construction/4.jpg" alt="constructions">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                    
+                </div>
+            </div>
+                 
+            <!-- Service 4 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Glass Supply and Fitting</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                                <img src="glass/1.jpg" alt="glass">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="glass/2.jpg" alt="glass">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="glass/3.jpg" alt="glass">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="glass/4.jpg" alt="glass">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                   
+                </div>
+            </div>
+                 
+            <!-- Service 4 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Aluminium Shower Cabins</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="cabins/1.jpg" alt="cabin">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="cabins/2.jpg" alt="cabin">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="cabins/3.jpg" alt="cabin">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="cabins/4.jpg" alt="cabin">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                   
+                </div>
+            </div>
+                 
+            <!-- Service 5 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Aluminium Office Partition</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="office/1.jpg" alt="office">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="office/2.jpg" alt="office">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="office/3.jpg" alt="office">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="office/4.jpg" alt="office">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                  
+                </div>
+            </div>
+                 
+            <!-- Service 6 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Cladding</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="cladding/1.jpg" alt="cladding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                               <img src="cladding/2.jpg" alt="cladding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                               <img src="cladding/3.jpg" alt="cladding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                                           <img src="cladding/4.jpg" alt="cladding">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                    
+                </div>
+            </div>
+                 
+            <!-- Service 7 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Curtain Walls</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="curtain/1.jpg" alt="curtain">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="curtain/2.jpg" alt="curtain">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="curtain/3.jpg" alt="curtain">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="curtain/4.jpg" alt="curtain">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                    
+                </div>
+            </div>
+                 
+            <!-- Service 8 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Wood Works</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="wood/1.jpg" alt="wood">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                        <img src="wood/2.jpg" alt="wood">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="wood/3.jpg" alt="wood">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="wood/4.jpg" alt="wood">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                   
+                </div>
+            </div>
+                 
+            <!-- Service 1 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Suspended Gypsum</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                           <img src="gypsum/1.jpg" alt="gypsum">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                              <img src="gypsum/2.jpg" alt="gypsum">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="gypsum/3.jpg" alt="gypsum">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="gypsum/4.jpg" alt="gypsum">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                   
+                </div>
+            </div>
+            
+            <!-- Service 1 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Interior Design</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="interior/1.jpg" alt="interior">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="interior/2.jpg" alt="interior">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="interior/3.jpg" alt="interior">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="interior/4.jpg" alt="interior">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                    
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-section">
+                <div class="service-title">
+                    <h3>Stainless Steel and Rails</h3>
+                </div>
+                <div class="service-images">
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="rails/1.jpg" alt="rails">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="rails/2.jpg" alt="rails">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                             <img src="rails/3.jpg" alt="rails">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-image-item">
+                        <div class="service-image-img">
+                            <img src="rails/4.jpg" alt="rails">
+                        </div>
+                        <div class="service-image-actions">
+                            <a href="https://wa.me/256775453737" class="service-action-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+256775453737" class="service-action-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-description">
+                    
+                </div>
+            </div>
+            
+            <!-- Continue with other services following the same pattern -->
+            <!-- I've shown 2 services as examples, the rest would follow the same structure -->
+            
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+        <div class="container">
+            <h2>Our Clients</h2>
+            <div class="clients-container">
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/kigo.jpg" alt="Entebbe-Kigo">
+                    </div>
+                    <h3 class="client-name">Entebbe-Kigo</h3>
+                </div>
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/kira.jpg" alt="Gayaza-Manyangwa Site">
+                    </div>
+                    <h3 class="client-name">KIRA Site</h3>
+                </div>
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/christ.jpg" alt="Christ Aid International Fort Portal">
+                    </div>
+                    <h3 class="client-name">Christ Aid International Fort Portal</h3>
+                </div>
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/seta.jpg" alt="Nebbi-JK Fuel Station">
+                    </div>
+                    <h3 class="client-name">SETA</h3>
+                </div>
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/naalya-gayaza.jpg" alt="Gayaza-Naalya Site">
+                    </div>
+                    <h3 class="client-name">Gayaza-Naalya Site</h3>
+                </div>
+                <div class="client-item">
+                    <div class="client-image">
+                        <img src="clients/kitende.jpg" alt="Kitende-Kitovu Site">
+                    </div>
+                    <h3 class="client-name">Kitende-Kajansi Site</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="team1.jpg" alt="Team Member 1">
+                    </div>
+                    <h3>Brian</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Naalya-Maikas House next to Mogas Fuel Station</p>
+                                <p>P.O.Box 850282 Kireka-Wakiso</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+256775453737</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>salbrian7@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <input type="text" id="service" name="service">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo-placeholder">
+                        <!-- Replace with your logo -->
+                        <!-- <img src="your-logo.png" alt="BRIVUD Logo"> -->
+                        <span style="color: var(--secondary); font-weight: bold; font-size: 1.5rem;">BRIVUD</span>
+                    </div>
+                    <p>Create. Reliable. Innovative</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Aluminum Works</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Steel Fabrication</a></li>
+                        <li><a href="#">Interior Design</a></li>
+                        <li><a href="#">Glass Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Naalya-Maikas House</li>
+                        <li>+256775453737</li>
+                        <li>salbrian7@gmail.com</li>
+                        <li>Mon-Fri: 8:00AM - 5:00PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BRIVUD ALUMINIUM AND CONSTRUCTION WORKS (U) LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For demonstration, we'll just show an alert
+                alert('Thank you for your message! We will contact you soon.');
+                this.reset();
+            });
+        }
+        
+        // Service section animations on scroll
+        const serviceSections = document.querySelectorAll('.service-section');
+        const clientItems = document.querySelectorAll('.client-item');
+        
+        const animateOnScroll = () => {
+            serviceSections.forEach((section, index) => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (sectionPosition < screenPosition) {
+                    section.style.transitionDelay = `${index * 0.1}s`;
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+            
+            clientItems.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (itemPosition < screenPosition) {
+                    item.style.transitionDelay = `${index * 0.1}s`;
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        serviceSections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.5s ease';
+        });
+        
+        clientItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
